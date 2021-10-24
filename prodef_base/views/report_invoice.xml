@@ -49,67 +49,67 @@
                 </div>
             </xpath>
         </template>
-        <template id="clean_layout_header" inherit_id="web.external_layout_clean">
-            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
-                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
-                    <div class="o_clean_header">
-                        <div class="row">
-                            <div class="col-3">
-                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
-                            </div>
-                            <div class="col-6" name="company_address">
-                                <ul class="list-unstyled">
-                                    <strong><li t-if="company.name"><span t-field="company.name"/></li></strong>
-                                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span
-                                            t-field="company.vat"/></li>
-                                    <li t-if="company.phone">Tel: <span class="o_force_ltr"
-                                                                        t-field="company.phone"/></li>
-                                    <li t-if="company.email"><span t-field="company.email"/></li>
-                                    <li t-if="company.website"><span t-field="company.website"/></li>
-                                </ul>
-                            </div>
-                            <div class="col-3" name="partner_adress">
-                                <div t-field="o.partner_id"
-                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
-                                />
-                                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"
-                                   id="inv_tax_id_label"/>
-                                <t t-if="o.partner_id.vat">Tax ID:</t> <span t-if="o.partner_id.vat"
-                                                                             t-field="o.partner_id.vat"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </xpath>
-        </template>
-        <template id="boxed_layout_header" inherit_id="web.external_layout_boxed">
-            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
-                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
-                    <div class="o_boxed_header">
-                        <div class="row mb8">
-                            <div class="col-3">
-                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
-                            </div>
-                            <div class="col-6 mb4">
-                                <h4 class="mt0" t-field="company.report_header"/>
-                                <div name="company_address" class="float-left mb4">
-                                    <span class="company_address" t-field="company.partner_id"
-                                          t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
-                                </div>
-                            </div>
-                            <div class="col-3" name="partner_adress">
-                                <div t-field="o.partner_id"
-                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
-                                />
-                                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"
-                                   id="inv_tax_id_label"/>
-                                <t t-if="o.partner_id.vat">Tax ID:</t> <span t-if="o.partner_id.vat"
-                                                                             t-field="o.partner_id.vat"/>
-                            </div>
-                        </div>
-                    </div>
-                </div></xpath>
-        </template>
+<!--        <template id="clean_layout_header" inherit_id="web.external_layout_clean">-->
+<!--            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">-->
+<!--                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">-->
+<!--                    <div class="o_clean_header">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-6" name="company_address">-->
+<!--                                <ul class="list-unstyled">-->
+<!--                                    <strong><li t-if="company.name"><span t-field="company.name"/></li></strong>-->
+<!--                                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span-->
+<!--                                            t-field="company.vat"/></li>-->
+<!--                                    <li t-if="company.phone">Tel: <span class="o_force_ltr"-->
+<!--                                                                        t-field="company.phone"/></li>-->
+<!--                                    <li t-if="company.email"><span t-field="company.email"/></li>-->
+<!--                                    <li t-if="company.website"><span t-field="company.website"/></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="col-3" name="partner_adress">-->
+<!--                                <div t-field="o.partner_id"-->
+<!--                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'-->
+<!--                                />-->
+<!--                                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"-->
+<!--                                   id="inv_tax_id_label"/>-->
+<!--                                <t t-if="o.partner_id.vat">Tax ID:</t> <span t-if="o.partner_id.vat"-->
+<!--                                                                             t-field="o.partner_id.vat"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--        </template>-->
+<!--        <template id="boxed_layout_header" inherit_id="web.external_layout_boxed">-->
+<!--            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">-->
+<!--                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">-->
+<!--                    <div class="o_boxed_header">-->
+<!--                        <div class="row mb8">-->
+<!--                            <div class="col-3">-->
+<!--                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-6 mb4">-->
+<!--                                <h4 class="mt0" t-field="company.report_header"/>-->
+<!--                                <div name="company_address" class="float-left mb4">-->
+<!--                                    <span class="company_address" t-field="company.partner_id"-->
+<!--                                          t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-3" name="partner_adress">-->
+<!--                                <div t-field="o.partner_id"-->
+<!--                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'-->
+<!--                                />-->
+<!--                                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"-->
+<!--                                   id="inv_tax_id_label"/>-->
+<!--                                <t t-if="o.partner_id.vat">Tax ID:</t> <span t-if="o.partner_id.vat"-->
+<!--                                                                             t-field="o.partner_id.vat"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div></xpath>-->
+<!--        </template>-->
 
         <template id="prodef_report_invoice_document_1"
                   inherit_id="account.report_invoice_document">
