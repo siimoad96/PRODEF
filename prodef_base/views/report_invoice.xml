@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="prodef base" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/prodef_base/static/src/css/style.css"/>
+            </xpath>
+        </template>
+
+        <template id="external_layout_header" inherit_id="web.external_layout_standard">
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                    <div class="row">
+                        <div class="col-3 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
+                                 alt="Logo"/>
+                        </div>
+                        <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header"
+                             name="moto"/>
+                    </div>
+                    <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                        <div class="col-12">
+                            <div style="border-bottom: 1px solid black;"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6" name="company_address">
+                            <div t-field="company.partner_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                            />
+                        </div>
+                        <!--                <t t-set="address">-->
+                        <!--                    <address class="col-6" t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />-->
+                        <!--                    <div t-if="o.partner_id.vat" class="mt16">-->
+                        <!--                        <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>-->
+                        <!--                        <t t-else="">Tax ID</t>: <span t-field="o.partner_id.vat"/></div>-->
+                        <!--                </t>-->
+                        <div class="col-6" name="partner_adress">
+                            <div t-field="o.partner_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                            />
+                            <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"
+                               id="inv_tax_id_label"/>
+                            <t t-if="o.partner_id.vat">Tax ID:</t> <span t-if="o.partner_id.vat"
+                                                                         t-field="o.partner_id.vat"/>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
+        </template>
+<!--        <template id="prodef_report_invoice_document_1"-->
+<!--                  inherit_id="account.report_invoice_document">-->
+<!--            <xpath expr="//t[@t-set='address']" position="replace"></xpath>-->
+<!--                        <xpath expr="//div[hasclass('clearfix')]" position="replace">-->
+<!--                <style>-->
+<!--                    #clr{-->
+<!--                    margin-top:600px;-->
+<!--                    page-break-inside: avoid; }-->
+
+<!--                </style>-->
+<!--                <div class="clearfix" id="clr">-->
+<!--                    <div id="total" class="row">-->
+<!--                        <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">-->
+<!--                            <table class="table table-sm" style="page-break-inside: avoid;">-->
+<!--                                <tr class="border-black o_subtotal" style="">-->
+<!--                                    <td><strong>Subtotal</strong></td>-->
+<!--                                    <td class="text-right">-->
+<!--                                        <span t-field="o.amount_untaxed"/>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">-->
+<!--                                    <tr style="">-->
+<!--                                        <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">-->
+<!--                                            <td><span class="text-nowrap" t-esc="amount_by_group[0]"/></td>-->
+<!--                                            <td class="text-right o_price_total">-->
+<!--                                                <span class="text-nowrap" t-esc="amount_by_group[3]"/>-->
+<!--                                            </td>-->
+<!--                                        </t>-->
+<!--                                        <t t-else="">-->
+<!--                                            <td>-->
+<!--                                                <span t-esc="amount_by_group[0]"/>-->
+<!--                                                <span class="text-nowrap"> on-->
+<!--                                                    <t t-esc="amount_by_group[4]"/>-->
+<!--                                                </span>-->
+<!--                                            </td>-->
+<!--                                            <td class="text-right o_price_total">-->
+<!--                                                <span class="text-nowrap" t-esc="amount_by_group[3]"/>-->
+<!--                                            </td>-->
+<!--                                        </t>-->
+<!--                                    </tr>-->
+<!--                                </t>-->
+<!--                                <tr class="border-black o_total">-->
+<!--                                    <td><strong>Total</strong></td>-->
+<!--                                    <td class="text-right">-->
+<!--                                        <span class="text-nowrap" t-field="o.amount_total"/>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <t t-if="print_with_payments">-->
+<!--                                    <t t-if="o.payment_state != 'invoicing_legacy'">-->
+<!--                                        <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>-->
+<!--                                        <t t-foreach="payments_vals" t-as="payment_vals">-->
+<!--                                            <tr>-->
+<!--                                                <td>-->
+<!--                                                    <i class="oe_form_field text-right oe_payment_label">Paid on <t-->
+<!--                                                            t-esc="payment_vals['date']"-->
+<!--                                                            t-options='{"widget": "date"}'/></i>-->
+<!--                                                </td>-->
+<!--                                                <td class="text-right">-->
+<!--                                                    <span t-esc="payment_vals['amount']"-->
+<!--                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                        </t>-->
+<!--                                        <t t-if="len(payments_vals) > 0">-->
+<!--                                            <tr class="border-black">-->
+<!--                                                <td><strong>Amount Due</strong></td>-->
+<!--                                                <td class="text-right">-->
+<!--                                                    <span t-field="o.amount_residual"/>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                        </t>-->
+<!--                                    </t>-->
+<!--                                </t>-->
+<!--                            </table>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                <p t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference"-->
+<!--                   name="payment_communication">-->
+<!--                    Please use the following communication for your payment : <b><span-->
+<!--                        t-field="o.payment_reference"/></b>-->
+<!--                </p>-->
+<!--                <p t-if="o.invoice_payment_term_id" name="payment_term">-->
+<!--                    <span t-field="o.invoice_payment_term_id.note"/>-->
+<!--                </p>-->
+<!--                <p t-if="o.narration" name="comment">-->
+<!--                    <span t-field="o.narration"/>-->
+<!--                </p>-->
+<!--                <p t-if="o.fiscal_position_id.note" name="note">-->
+<!--                    <span t-field="o.fiscal_position_id.note"/>-->
+<!--                </p>-->
+<!--                <p t-if="o.invoice_incoterm_id" name="incoterm">-->
+<!--                    <strong>Incoterm: </strong><span t-field="o.invoice_incoterm_id.code"/> - <span-->
+<!--                        t-field="o.invoice_incoterm_id.name"/>-->
+<!--                </p>-->
+<!--                <div id="qrcode" t-if="o.display_qr_code">-->
+<!--                    <p t-if="qr_code_urls.get(o.id)">-->
+<!--                        <strong class="text-center">Scan me with your banking app.</strong><br/><br/>-->
+<!--                        <img class="border border-dark rounded" t-att-src="qr_code_urls[o.id]"/>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                </div>-->
+
+<!--            </xpath>-->
+
+<!--<xpath expr="//p[@name='payment_term']" position="replace"></xpath>-->
+<!--<xpath expr="//p[@name='comment']" position="replace"></xpath>-->
+<!--<xpath expr="//p[@name='note']" position="replace"></xpath>-->
+<!--<xpath expr="//p[@name='incoterm']" position="replace"></xpath>-->
+<!--<xpath expr="//div[@id='qrcode']" position="replace"></xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>
