@@ -66,10 +66,10 @@
         </template>
 
         <template id="report_invoice_document_prodef" inherit_id="account.report_invoice_document">
-            <xpath expr="//t[@t-set='address']" position="attributes">
+            <xpath expr="//address" position="attributes">
                 <attribute name="style">display:none;</attribute><br/>
             </xpath>
-            <xpath expr="//t[@t-set='address']" position="after">
+            <xpath expr="//address" position="after">
                 <br/><br/>
             </xpath>
             <xpath expr="//div[hasclass('page')]" position="replace">
