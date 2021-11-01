@@ -1,4 +1,10 @@
-.table.o_main_table{
-    color:#555;
-    width: 600px;
+table.table-bordered{
+    border:1px solid blue!important;
+    margin-top:20px !important;
+  }
+table.table-bordered > thead > tr > th{
+    border:1px solid blue !important;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid blue !important;
 }

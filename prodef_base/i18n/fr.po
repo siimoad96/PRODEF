@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* prodef_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-01 00:19+0000\n"
+"PO-Revision-Date: 2021-11-01 00:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid ""
+"<br/>\n"
+"                                            <span style=\"font-size:80%;\">Mode de paiement: Chèque</span><br/>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid ""
+"<br/>\n"
+"                                            <strong style=\"font-size:80%;\">N° de compte: 00000003797-67 - Rib: 605640000010000000379767 - Swift: AIBSMAMT</strong>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Montant</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Prix total</span>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid ""
+"<span>\n"
+"                                Taxes</span>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid ""
+"<span>\n"
+"                                Unit Price</span>"
+msgstr ""
+"<span>\n"
+"                                Prix unitaire</span>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<span>Description</span>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<span>Disc.%</span>"
+msgstr "<span>Rem.%</span>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<span>Quantity</span>"
+msgstr "<span>Quantité</span>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-total</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Customer Code:</strong>"
+msgstr "<strong style=\"color:black !important;\">Numéro de client:</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Due Date:</strong>"
+msgstr "<strong style=\"color:black !important;\">Date d'échéance:</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Invoice Date:</strong>"
+msgstr "<strong style=\"color:black !important;\">Date de facturation:</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Montant total NET HT</strong>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Reference:</strong>"
+msgstr "<strong style=\"color:black !important;\">Référence:</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Source:</strong>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Subtotal</strong>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong style=\"color:black !important;\">Total de facture</strong>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "<strong>Amount Due</strong>"
+msgstr "<strong>Montant dû</strong>"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Cancelled Invoice:"
+msgstr "Facture annulée:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Credit Note:"
+msgstr "Avoir:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Draft Invoice:"
+msgstr "Facture en brouillon:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Invoice:"
+msgstr "Facture:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.standard_layout_header
+msgid "Logo"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.standard_layout_header
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Paid on"
+msgstr "Payé le"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.standard_layout_header
+msgid "Tax ID:"
+msgstr "N° TVA:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Vendor Bill:"
+msgstr "Facture fournisseur:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "Vendor Credit Note:"
+msgstr "Avoir de fournisseur:"
+
+#. module: prodef_base
+#: model_terms:ir.ui.view,arch_db:prodef_base.report_invoice_document_prodef
+msgid "on"
+msgstr "le"
